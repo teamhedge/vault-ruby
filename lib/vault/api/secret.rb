@@ -141,7 +141,7 @@ module Vault
     # @!attribute [r] wrapped_accessor
     #   Accessor for the wrapped token. This is like a `lease_id`, but for a token.
     #   @return [String]
-    field :wrapped_accessor
+    field :accessor
 
     # @!attribute [r] creation_time
     #   Date & time when the wrapped token was created
