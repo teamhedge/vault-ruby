@@ -146,5 +146,14 @@ module Vault
     rescue HTTPError => e
       raise
     end
+
+    def unwrap_wrapping_token(token)
+      json = client.put("/v1/sys/wrapping/unwrap", JSON.fast_generate({token: token}))
+      if json.nil?
+        return true
+      else
+        return Secret.decode(json)
+      end
+    end
   end
 end
